@@ -9,10 +9,13 @@ if __name__ == "__main__":
     user_name = input("Enter your name: ")
     greet_user(user_name)
 
-    # Calculate the square of a number
-    try:
-        num = float(input("Enter a number to square: "))
-        result = square_number(num)
-        print(f"The square of {num} is {result}.")
-    except ValueError:
-        print("Please enter a valid number.")
+    # Calculate the square of a number with input validation
+    while True:
+        num_input = input("Enter a number to square: ")
+        try:
+            num = float(num_input)
+            result = square_number(num)
+            print(f"The square of {num} is {result}.")
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
